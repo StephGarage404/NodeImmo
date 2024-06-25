@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Accueil</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+</head>
+<body class="container mx-auto p-4">
+<h1 class="text-2xl font-bold">Liste des annonces</h1>
+<ul class="mt-4">
+    {{#annonces}}
+    <li class="mb-2">
+        <a href="/annonces/edit/{{_id}}" class="text-blue-500 hover:underline">{{titre}}</a> - {{prix}}€
+        <a href="/annonces/delete/{{id}}" class="text-red-500 hover:underline">Supprimer</a>
+    </li>
+    {{/annonces}}
+</ul>
+<a href="/annonces/create" class="mt-4 inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Créer une nouvelle annonce</a>
+</body>
+</html>

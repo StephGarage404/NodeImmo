@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editer une annonce</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-200">
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-bold mb-4">Editer l'annonce</h1>
+        <form action="/annonces/edit/{{annonce._id}}" method="POST">
+            <div class="mb-4">
+                <label for="titre" class="block text-gray-700">Titre:</label>
+                <input type="text" id="titre" name="titre" value="{{annonce.titre}}" required class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div class="mb-4">
+                <label for="description" class="block text-gray-700">Description:</label>
+                <textarea id="description" name="description" required class="w-full p-2 border border-gray-300 rounded">{{annonce.description}}</textarea>
+            </div>
+            <div class="mb-4">
+                <label for="prix" class="block text-gray-700">Prix:</label>
+                <input type="number" id="prix" name="prix" value="{{annonce.prix}}" required class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded">Mettre à jour</button>
+        </form>
+        <a href="/" class="block mt-4 text-blue-500 hover:underline">Retour à la liste des annonces</a>
+    </div>
+</body>
+</html>
