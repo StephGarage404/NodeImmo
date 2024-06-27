@@ -1,6 +1,9 @@
 const express = require('express');
 const mustacheExpress = require('mustache-express');
 const connectDatabase = require('./config/database');
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger');
+
 
 const app = express();
 const mustache = mustacheExpress();
@@ -16,6 +19,7 @@ app.use(express.urlencoded({ extended: true })); // Pour le support des formulai
 
 connectDatabase();
 
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/", require("./routes/annonces"));
 
 app.listen(port, () => {

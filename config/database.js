@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const uri = "VOTRE URI MONGODB ICI";
+const uri = "mongodb+srv://admin:admin@clusterg404life.dw77o7n.mongodb.net/?retryWrites=true&w=majority&appName=ClusterG404Life";
 
 
 const connectDatabase = async () => {
